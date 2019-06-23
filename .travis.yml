@@ -2,6 +2,22 @@ language: android
 jdk: oraclejdk8
 sudo: false
 
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+env:
+  global:
+    - ANDROID_API=24
+    - EMULATOR_API=21
+    - ANDROID_BUILD_TOOLS=24.0.2
+    - ADB_INSTALL_TIMEOUT=5
+
 android:
   components:
     - platform-tools
@@ -22,8 +38,8 @@ before_script:
 jobs:
   include:
     - stage: build
-      script: ./gradlew assembleDebug
+      script: ./gradlew clean assembleDebug
     - stage: unit-test
-      script: ./gradlew test
+      script: ./gradlew clean test
     - stage: android-test
-      script: ./gradlew connectedAndroidTest
+      script: ./gradlew clean build connectedAndroidTest

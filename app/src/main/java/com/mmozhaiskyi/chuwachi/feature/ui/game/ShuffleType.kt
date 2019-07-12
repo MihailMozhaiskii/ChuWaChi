@@ -1,4 +1,4 @@
-package com.mmozhaiskyi.chuwachi.game
+package com.mmozhaiskyi.chuwachi.feature.ui.game
 
 data class Member(val id: String)
 

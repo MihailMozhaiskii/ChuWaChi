@@ -11,8 +11,8 @@
             android:id="@+id/number"
             android:textSize="42sp"
             android:gravity="center"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent" tools:text="1" />
 

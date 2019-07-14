@@ -5,4 +5,8 @@
     <string name="game_setup">Game setup</string>
     <string name="select_count_of_players">Select count of players</string>
     <string name="select_game_type">Select game type</string>
+    <string name="one_vs_one">1 x 1</string>
+    <string name="two_vs_two">2 x 2</string>
+    <string name="one_vs_one_description">Good for ber or duel</string>
+    <string name="two_vs_two_description">Real team play</string>
 </resources>

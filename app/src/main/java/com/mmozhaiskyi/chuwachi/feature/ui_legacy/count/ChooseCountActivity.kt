@@ -1,4 +1,4 @@
-package com.mmozhaiskyi.chuwachi.feature.ui.count
+package com.mmozhaiskyi.chuwachi.feature.ui_legacy.count
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

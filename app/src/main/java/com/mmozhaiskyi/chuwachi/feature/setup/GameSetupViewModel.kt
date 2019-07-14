@@ -1,4 +1,4 @@
-package com.mmozhaiskyi.chuwachi.feature.ui.game.setup
+package com.mmozhaiskyi.chuwachi.feature.setup
 
 import androidx.lifecycle.ViewModel
 

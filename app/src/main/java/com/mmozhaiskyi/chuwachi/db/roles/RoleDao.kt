@@ -12,4 +12,7 @@ abstract class RoleDao {
 
     @Query("SELECT * FROM RoleDbModel WHERE uid = :uid")
     abstract suspend fun getByUId(uid: String): RoleDbModel
+
+    @Query("SELECT uid FROM RoleDbModel ORDER BY RANDOM() LIMIT :count")
+    abstract suspend fun getRandomUIDs(count: Int): List<String>
 }

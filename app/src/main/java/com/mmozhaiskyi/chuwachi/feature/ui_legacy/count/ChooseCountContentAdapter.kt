@@ -1,4 +1,4 @@
-package com.mmozhaiskyi.chuwachi.feature.ui.count
+package com.mmozhaiskyi.chuwachi.feature.ui_legacy.count
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

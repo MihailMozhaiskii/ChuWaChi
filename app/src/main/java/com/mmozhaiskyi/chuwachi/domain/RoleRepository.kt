@@ -1,4 +1,4 @@
-package com.mmozhaiskyi.chuwachi.data.repository
+package com.mmozhaiskyi.chuwachi.domain
 
 import com.mmozhaiskyi.chuwachi.data.model.Role
 
@@ -11,5 +11,5 @@ interface RoleRepository {
      */
 
     //TODO add role types parameter. Something like Telegram sticker pack
-    suspend fun getRandomRoles(): List<String>
+    suspend fun getRandomRoles(count: Int): List<String>
 }

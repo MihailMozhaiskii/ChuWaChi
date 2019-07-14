@@ -1,7 +1,7 @@
 package com.mmozhaiskyi.chuwachi
 
 import android.app.Application
-import com.mmozhaiskyi.chuwachi.feature.ui.game.setup.gameSetupModule
+import com.mmozhaiskyi.chuwachi.feature.setup.gameSetupModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

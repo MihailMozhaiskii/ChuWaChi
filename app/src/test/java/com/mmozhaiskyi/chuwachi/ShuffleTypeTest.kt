@@ -1,7 +1,7 @@
 package com.mmozhaiskyi.chuwachi
 
-import com.mmozhaiskyi.chuwachi.feature.ui.game.Member
-import com.mmozhaiskyi.chuwachi.feature.ui.game.ShuffleType
+import com.mmozhaiskyi.chuwachi.data.model.MemberContainer
+import com.mmozhaiskyi.chuwachi.data.model.ShuffleType
 import org.junit.Test
 
 class ShuffleTypeTest {
@@ -11,8 +11,8 @@ class ShuffleTypeTest {
         val type = ShuffleType.OneVsOne
 
         val members = setOf(
-            Member("1"),
-            Member("2")
+            MemberContainer("1"),
+            MemberContainer("2")
         )
 
         val result = type.shuffle(members)
@@ -29,9 +29,9 @@ class ShuffleTypeTest {
         val type = ShuffleType.OneVsOne
 
         val members = setOf(
-            Member("1"),
-            Member("2"),
-            Member("3")
+            MemberContainer("1"),
+            MemberContainer("2"),
+            MemberContainer("3")
         )
 
         val result = type.shuffle(members)
@@ -48,10 +48,10 @@ class ShuffleTypeTest {
         val type = ShuffleType.TwoVsTwo
 
         val members = setOf(
-            Member("1"),
-            Member("2"),
-            Member("3"),
-            Member("4")
+            MemberContainer("1"),
+            MemberContainer("2"),
+            MemberContainer("3"),
+            MemberContainer("4")
         )
 
         val result = type.shuffle(members)
@@ -68,11 +68,11 @@ class ShuffleTypeTest {
         val type = ShuffleType.TwoVsTwo
 
         val members1 = setOf(
-            Member("1"),
-            Member("2"),
-            Member("3"),
-            Member("4"),
-            Member("5")
+            MemberContainer("1"),
+            MemberContainer("2"),
+            MemberContainer("3"),
+            MemberContainer("4"),
+            MemberContainer("5")
         )
 
         val result1 = type.shuffle(members1)
@@ -86,12 +86,12 @@ class ShuffleTypeTest {
 
 
         val members2 = setOf(
-            Member("1"),
-            Member("2"),
-            Member("3"),
-            Member("4"),
-            Member("5"),
-            Member("6")
+            MemberContainer("1"),
+            MemberContainer("2"),
+            MemberContainer("3"),
+            MemberContainer("4"),
+            MemberContainer("5"),
+            MemberContainer("6")
         )
 
         val result2 = type.shuffle(members2)
@@ -104,13 +104,13 @@ class ShuffleTypeTest {
 
 
         val members3 = setOf(
-            Member("1"),
-            Member("2"),
-            Member("3"),
-            Member("4"),
-            Member("5"),
-            Member("6"),
-            Member("7")
+            MemberContainer("1"),
+            MemberContainer("2"),
+            MemberContainer("3"),
+            MemberContainer("4"),
+            MemberContainer("5"),
+            MemberContainer("6"),
+            MemberContainer("7")
         )
 
         val result3 = type.shuffle(members3)

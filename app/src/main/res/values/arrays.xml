@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="materialColors">
+        <item>@color/materialRed</item>
+        <item>@color/materialPink</item>
+        <item>@color/materialPurple</item>
+        <item>@color/materialDeepPurple</item>
+        <item>@color/materialIndigo</item>
+        <item>@color/materialBlue</item>
+        <item>@color/materialLightBlue</item>
+        <item>@color/materialCyan</item>
+        <item>@color/materialTeal</item>
+        <item>@color/materialGreen</item>
+        <item>@color/materialLightGreen</item>
+        <item>@color/materialLime</item>
+        <item>@color/materialYellow</item>
+        <item>@color/materialAmber</item>
+    </array>
+</resources>

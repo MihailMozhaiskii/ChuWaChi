@@ -14,6 +14,6 @@ import androidx.room.PrimaryKey
     )
 ])
 data class PlayerDbModel(
-    @PrimaryKey(autoGenerate = true) val _id: Int,
+    @PrimaryKey(autoGenerate = true) val _id: Int = 0,
     @ColumnInfo(name = "game_id") val _gameId: Int,
     @ColumnInfo(name = "role_uid") val roleUID: String)

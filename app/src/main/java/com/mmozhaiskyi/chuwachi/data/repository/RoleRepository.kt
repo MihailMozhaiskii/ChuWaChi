@@ -1,16 +1,21 @@
 package com.mmozhaiskyi.chuwachi.data.repository
 
+import com.mmozhaiskyi.chuwachi.data.mapper.RoleMapper
 import com.mmozhaiskyi.chuwachi.data.model.Role
 import com.mmozhaiskyi.chuwachi.db.roles.RoleDao
-import com.mmozhaiskyi.chuwachi.db.roles.RoleDbModel
-import com.mmozhaiskyi.chuwachi.domain.RoleRepository
 
-object RoleMapper {
+interface RoleRepository {
 
-    fun fromDbModel(dbModel: RoleDbModel): Role = with(dbModel) {
-        Role(uid, name, avatarUrl, description)
-    }
+    suspend fun loadRole(uid: String): Role
+
+    /**
+     * return list of role uid
+     */
+
+    //TODO add role types parameter. Something like Telegram sticker pack
+    suspend fun getRandomRoles(count: Int): List<String>
 }
+
 
 class RoleRepositoryImpl(
     private val roleDao: RoleDao

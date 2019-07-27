@@ -10,13 +10,14 @@ import kotlinx.android.synthetic.main.item_number.view.*
 
 class PickNumberAdapter(
     range: IntRange,
+    defaultSelectedItem: Int,
     selectableChanges: (List<Int>) -> Unit
 ) : SelectableRecyclerViewAdapter<Int>(
     items = range.toList(),
     strategy = SelectedStrategy.ONE,
     viewHolderFactory = SingleTypeViewHolderFactory { parent -> NumberHolder.inflate(parent) },
     selectedItemsChanges = selectableChanges,
-    defaultSelectedPositions = listOf(0)
+    defaultSelectedPositions = listOf(range.indexOf(defaultSelectedItem))
 ) {
 
     class NumberHolder(private val view: View) : SelectableViewHolder<Int>(view) {
@@ -24,7 +25,7 @@ class PickNumberAdapter(
         override fun bind(item: Int, isSelected: Boolean): Unit = with(view) {
             number.text = item.toString()
 
-            val backgroundColorRes = if (isSelected) R.color.colorPrimary else R.color.white
+            val backgroundColorRes = if (isSelected) R.color.colorPrimary else R.color.greyLight
             val textColorRes = if (isSelected) R.color.white else R.color.textColorSecondary
 
             val backgroundColor = ContextCompat.getColor(context, backgroundColorRes)

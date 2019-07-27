@@ -14,13 +14,14 @@ import kotlinx.android.synthetic.main.item_shuffle_type.view.*
 
 class PickShuffleTypeAdapter(
     items: List<ShuffleTypeViewModel>,
+    defaultSelectedItem: ShuffleTypeViewModel,
     selectableChanges: (List<ShuffleTypeViewModel>) -> Unit
 ) : SelectableRecyclerViewAdapter<ShuffleTypeViewModel>(
     items = items,
     strategy = SelectedStrategy.ONE,
     viewHolderFactory = SingleTypeViewHolderFactory { parent -> ShuffleTypeHolder.inflate(parent) },
     selectedItemsChanges = selectableChanges,
-    defaultSelectedPositions = listOf(0)
+    defaultSelectedPositions = listOf(items.indexOf(defaultSelectedItem))
 ) {
 
     class ShuffleTypeHolder(private val view: View) : SelectableViewHolder<ShuffleTypeViewModel>(view) {
@@ -29,10 +30,18 @@ class PickShuffleTypeAdapter(
             title.setText(item.title)
             description.setText(item.description)
 
-            val backgroundColor = ContextCompat.getColor(context, item.backgroundColor)
-            container.setCardBackgroundColor(backgroundColor)
+            val (backgroundColorRes, textColorRes) = if (isSelected) {
+                R.color.colorPrimary to R.color.white
+            } else {
+                R.color.greyLight to R.color.textColorSecondary
+            }
 
-            checkLabel.isVisible = isSelected
+            val backgroundColor = ContextCompat.getColor(context, backgroundColorRes)
+            val textColor = ContextCompat.getColor(context, textColorRes)
+
+            container.setCardBackgroundColor(backgroundColor)
+            title.setTextColor(textColor)
+            description.setTextColor(textColor)
         }
 
         companion object {

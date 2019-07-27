@@ -10,16 +10,14 @@ abstract class GameAndPlayersDao {
     @Query("SELECT * FROM GameDbModel")
     abstract suspend fun loadGame(): GameAndPlayers
 
-    fun insert(game: GameAndPlayers) {
-        insert(game.game)
-        insert(game.players)
-    }
+    @Query("SELECT COUNT(*) FROM GameDbModel")
+    abstract suspend fun countOfSavedGame(): Int
 
     @Insert
-    protected abstract fun insert(game: GameDbModel)
+    abstract suspend fun insert(game: GameDbModel): Long
 
     @Insert
-    protected abstract fun insert(players: List<PlayerDbModel>)
+    abstract suspend fun insert(players: List<PlayerDbModel>)
 
     @Query("DELETE FROM GameDbModel")
     abstract suspend fun clearGame()

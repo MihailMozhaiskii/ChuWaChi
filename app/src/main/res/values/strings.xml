@@ -9,4 +9,5 @@
     <string name="two_vs_two">2 x 2</string>
     <string name="one_vs_one_description">Good for ber or duel</string>
     <string name="two_vs_two_description">Real team play</string>
+    <string name="create_game">Create game</string>
 </resources>
